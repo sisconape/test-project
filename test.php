@@ -25,6 +25,12 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $text
 			];
+			$post = json_encode($data);
+			echo $post;
+
+		}
+	}
+}
 
 ?>
 
