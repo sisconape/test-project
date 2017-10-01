@@ -8,8 +8,8 @@ $headers = array('Authorization: Bearer ' . $access_token);
 $ch = curl_init();
 curl_setopt( $ch, CURLOPT_URL, $url); 
       // SSL USE 
-curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0); 
-curl_setopt( $chOne, CURLOPT_SSL_VERIFYPEER, 0); 
+curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0); 
+curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0); 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
