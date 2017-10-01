@@ -6,7 +6,7 @@ $url = 'https://api.line.me/v1/oauth/verify';
 $headers = array('Authorization: Bearer ' . $access_token);
 
 $ch = curl_init();
-curl_setopt( $chOne, CURLOPT_URL, $url); 
+curl_setopt( $ch, CURLOPT_URL, $url); 
       // SSL USE 
 curl_setopt( $chOne, CURLOPT_SSL_VERIFYHOST, 0); 
 curl_setopt( $chOne, CURLOPT_SSL_VERIFYPEER, 0); 
