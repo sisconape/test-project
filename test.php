@@ -61,10 +61,10 @@ $url = 'https://api.line.me/v2/bot/message/push';
 $userToken = 'Ud447347674fd962115910f0911b70e27';
 $messages = [
 				'type' => 'text',
-				'text' => 'hello' 
+				'text' => 'helloasdsad' 
 			];
 $data = [
-				'to' => $userToken,
+				'to' => [$userToken],
 				'messages' => [$messages]
 		];
 		$post = json_encode($data);
