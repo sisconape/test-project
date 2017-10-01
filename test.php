@@ -65,7 +65,7 @@ $messages = [
 			];
 $data = [
 				'to' => $userToken,
-				'messages' => $messages
+				'messages' => [$messages]
 		];
 		$post = json_encode($data);
 			$ch = curl_init($url);
