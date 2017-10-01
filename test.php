@@ -65,9 +65,8 @@ $messages = [
 			];
 $data = [
 				'to' => $userToken,
-				'messages' => ['type' => 'text',
-							   'text' => 'helloasd' 
-			]
+				'messages' => [['type' => 'text',
+							   'text' => 'hellofinal']]
 		];
 		$post = json_encode($data);
 			$ch = curl_init($url);
