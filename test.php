@@ -12,7 +12,7 @@ $access_token = 'oJmfE8Hb44GBIXwxzd+tjJFiuNhO4Wiz0hsE6BFpt+uoQtuE9B6wCsHyp4Kb39m
 
 // Get POST body content
 
-$content = file_get_contents('php://input');
+/*$content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => 'hello'.$replyuser
+				'text' => 'hello'.$replyuser 
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -55,6 +55,27 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "OK";
+*/
+$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+$url = 'https://api.line.me/v2/bot/message/push';
+$userToken = 'Ud447347674fd962115910f0911b70e27';
+$messages = [
+				'type' => 'text',
+				'text' => 'hello' 
+			];
+$data = [
+				'to' => $userToken,
+				'messages' => [$messages]
+		];
+		$post = json_encode($data);
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+
 
 ?>
 
