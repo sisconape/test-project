@@ -28,16 +28,18 @@ if (!is_null($events['events'])) {
 			$replyuser = $event['source']['userId'];
 			// Build message to reply back
 	*/		
-			$messages = [
-				'type' => 'text',
-				'text' => 'hello'.$replyuser 
-			];
+			
 			// Make a POST Request to Messaging API to reply to sender
 			//$url = 'https://api.line.me/v2/bot/message/reply';
-			$access_token = "U0fc91b822df6c2a9bfbc66232fbe93df";
+			$access_token = "bc9PBjw9ey7HJGp+uA23IFC+tmHSS/LB6RqG4FZqabI+788V3BBb9hKA4PjeiEh/duOWvVp3/qd/TL7S62NTAKPqrZDKUYEN6/FKuK4ziSivX5HVN+frXgPsBj9l/jWMlOLducjNKqKODO15jqlRAwdB04t89/1O/w1cDnyilFU=";
 			$url = 'https://api.line.me/v2/bot/message/push';
+
+			$messages = [
+        'type' => 'text',
+        'text' => 'hello'.date("H:i:s",time()) 
+      ];
 			$data = [
-				'replyToken' => $replyToken,
+				'to' => $userid,
 				'messages' => [$messages]
 			];
 			$post = json_encode($data);
